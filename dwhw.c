@@ -75,7 +75,9 @@ bool dwhw_init(void)
 	}
 	if (cnt <= 0) {
 		LOG_ERR("Init did not leave IDLE state");
+#if !CONFIG_DECA_IGNORE_INIT_IDLE_STATE
 		return false;
+#endif
 	}
 
 	uint32_t dev_id = dwt_readdevid();
