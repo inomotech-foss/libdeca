@@ -87,7 +87,9 @@ bool dwhw_init(void)
 		LOG_INF("DEV ID: %" PRIX32, dev_id);
 	}
 
-	// dwt_setleds(DWT_LEDS_ENABLE | DWT_LEDS_INIT_BLINK);
+#if CONFIG_DECA_ENABLE_LED_OUTPUT
+	dwt_setleds(DWT_LEDS_ENABLE | DWT_LEDS_INIT_BLINK);
+#endif
 
 	dw3000_spi_speed_fast();
 

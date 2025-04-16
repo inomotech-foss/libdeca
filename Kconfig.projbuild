@@ -1,5 +1,8 @@
 menu "libdeca"
 
+    config DECA_ENABLE_LED_OUTPUT
+        bool "Enable the LEDs to indicate RX/TX status"
+
     config DECA_USE_CARRIERINTEG
         bool "Store carrier integrator value with each received packet"
 
